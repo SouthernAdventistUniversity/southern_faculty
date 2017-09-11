@@ -1,0 +1,21 @@
+.faculty_container {
+  width: 66%; }
+  .faculty_container .card {
+    float: left;
+    width: 33%;
+    text-align: center;
+    padding: 40px 20px; }
+    .faculty_container .card .faculty_image {
+      margin: 0 auto 8px;
+      border: 1px solid #fff;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+      width: 120px; }
+    .faculty_container .card .faculty_basic {
+      line-height: 18px; }
+      .faculty_container .card .faculty_basic span {
+        display: block;
+        margin: 1px; }
+        .faculty_container .card .faculty_basic span.name {
+          font-weight: bold; }
+
+/*# sourceMappingURL=app.css.map */

@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="http://d2cd1094.ngrok.io/faculty/css/app.css">
+
+<div class="faculty_container" layout="row" layout-wrap layout-margin layout-padding>
+    <div class="card" ng-repeat="(key, value) in faculty_names" ng-click="showFacultyInfo(value)" layout="column" flex="33" md-whiteframe="3">
+        <div layout="row">
+            <img class="faculty_image" ng-src="http://www.southern.edu/api/people-search/imageserver.php?user={{key}}&w=120" />
+            <div class="faculty_basic" layout="column" layout="space-between start">
+                <span class="name">{{value.PreferredName}}</span>
+                <span class="title">{{value.PositionTitle}}</span>
+                <span class="email">{{value.Email}}</span>
+                <span class="phone">{{value.PrimaryCampusExt}}</span>
+            </div>
+        </div>
+    </div>
+</div>
