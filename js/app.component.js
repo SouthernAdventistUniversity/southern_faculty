@@ -5,7 +5,7 @@
         .module('FacultyApp')
         .component('facultyDirectory', {
             templateUrl: function($sce) {
-                return $sce.trustAsResourceUrl('http://d2cd1094.ngrok.io/faculty/views/faculty_picture.html')
+                return $sce.trustAsResourceUrl('views/faculty_picture.html')
             },
             controller: ControllerController,
             bindings: {
@@ -16,16 +16,26 @@
     ControllerController.inject = ['$scope', '$http', '$sce'];
 
     function ControllerController($scope, $http, $sce) {
-        console.log("HI")
+
         this.$onInit = () => {
-            $http.get('http://www.southern.edu/api/people-search/' + this.school + '/employee_by_area').then((result) => {
+            $http.get('http://www.southern.edu/api/people-search/' + this.school + '/employee_by_area', "json").then((result) => {
                 $scope.faculty_names = result.data;
-                //console.log(result.data);
+                console.log(result.data);
             })
         }
 
-        $scope.showFacultyValue = function(info) {
+        $scope.showFacultyInfo = function(info) {
             console.log(info)
+            $scope.faculty = info;
+            $http.get('php/faculty_info.php?teacher=' + info.PreferredName).then((result) => {
+                $scope.classes_taught = result.data;
+                console.log(result.data)
+            })
+        }
+
+        $scope.closeFaculty = () => {
+            $scope.faculty = null;
+            $scope.classes_taught = null;
         }
     }
 })();

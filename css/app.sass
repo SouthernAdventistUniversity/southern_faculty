@@ -1,10 +1,9 @@
 .faculty_container
-    width: 66%
     .card
-        float: left
-        width: 33%
+        display: inline-flex
         text-align: center
-        padding: 40px 20px
+        padding: 15px 20px
+        cursor: pointer
         .faculty_image
             margin: 0 auto 8px
             border: 1px solid #fff
@@ -20,3 +19,32 @@
                 &.title
                 &.email
                 &.phone
+    .dimmer
+        position: fixed
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: rgba(134, 134, 134, 0.9)
+        display: flex
+        flex-direction: column
+        justify-content: center
+    .more_info_container
+        width: 700px
+        margin: 0 auto
+        padding: 20px
+        text-align: right
+        .more_info
+            background: #fff
+            text-align: left
+            display: flex
+            flex-direction: row
+            .left
+                padding: 10px
+                .image
+                    width: 120px
+            .middle
+                padding: 10px 5px
+                flex-basis: 360px
+            .right
+                padding: 10px

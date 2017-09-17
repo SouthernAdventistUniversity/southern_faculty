@@ -1,14 +1,39 @@
-<link rel="stylesheet" href="http://d2cd1094.ngrok.io/faculty/css/app.css">
+<link rel="stylesheet" href="css/app.css">
 
 <div class="faculty_container" layout="row" layout-wrap layout-margin layout-padding>
-    <div class="card" ng-repeat="(key, value) in faculty_names" ng-click="showFacultyInfo(value)" layout="column" flex="33" md-whiteframe="3">
-        <div layout="row">
-            <img class="faculty_image" ng-src="http://www.southern.edu/api/people-search/imageserver.php?user={{key}}&w=120" />
-            <div class="faculty_basic" layout="column" layout="space-between start">
-                <span class="name">{{value.PreferredName}}</span>
-                <span class="title">{{value.PositionTitle}}</span>
-                <span class="email">{{value.Email}}</span>
-                <span class="phone">{{value.PrimaryCampusExt}}</span>
+    <div>
+        <div class="card" ng-repeat="(key, value) in faculty_names" ng-click="showFacultyInfo(value)" layout="column" flex="33" md-whiteframe="3">
+            <div layout="row">
+                <img class="faculty_image" ng-src="http://www.southern.edu/api/people-search/imageserver.php?user={{key}}&w=120" />
+                <div class="faculty_basic" layout="column" layout="space-between start">
+                    <span class="name">{{value.PreferredName}}</span>
+                    <span class="title">{{value.PositionTitle}}</span>
+                    <span class="email">{{value.Email}}</span>
+                    <span class="phone">{{value.PrimaryCampusExt}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dimmer" ng-if="faculty">
+        <div class="more_info_container">
+            <span class "close" ng-click="closeFaculty()">Close Window</span>
+            <div class="more_info">
+                <div class="left">
+                    <img class="image" ng-src="http://www.southern.edu/api/people-search/imageserver.php?user={{faculty.Email}}&w=120" />
+                    <div class="title">{{faculty.PositionTitle}}</div>
+                    <div class="title">{{faculty.PrimaryCampusExt}}</div>
+                </div>
+                <div class="middle">
+                    <div class="name">{{faculty.PreferredName}}</div>
+                    <div class="title">{{faculty.Email}}</div>
+                    <div class="bio" ng-bind-html="faculty.Bio | rawHtml"></div>
+                </div>
+                <div class="right">
+                    <div class="">Classes Taught</div>
+                    <div class="classes" ng-repeat="class in classes_taught">
+                        {{class.Title}}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
