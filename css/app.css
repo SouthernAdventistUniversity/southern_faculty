@@ -29,7 +29,9 @@
   width: 700px;
   margin: 0 auto;
   padding: 20px;
-  text-align: right; }
+  text-align: right;
+  position: relative;
+  z-index: 100; }
   .faculty_container .more_info_container .more_info {
     background: #fff;
     text-align: left;
@@ -44,5 +46,14 @@
       flex-basis: 360px; }
     .faculty_container .more_info_container .more_info .right {
       padding: 10px; }
+.faculty_container .faculty-background {
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
 
 /*# sourceMappingURL=app.css.map */

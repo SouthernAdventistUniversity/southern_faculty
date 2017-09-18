@@ -16,7 +16,7 @@
     </div>
     <div class="dimmer" ng-if="faculty">
         <div class="more_info_container">
-            <span class "close" ng-click="closeFaculty()">Close Window</span>
+            <span class="close" ng-click="closeFaculty()">Close Window</span>
             <div class="more_info">
                 <div class="left">
                     <img class="image" ng-src="http://www.southern.edu/api/people-search/imageserver.php?user={{faculty.Email}}&w=120" />
@@ -36,5 +36,6 @@
                 </div>
             </div>
         </div>
+        <div ng-click="closeFaculty()" class="faculty-background"></div>
     </div>
 </div>
