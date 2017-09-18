@@ -30,7 +30,7 @@
                 </div>
                 <div class="right">
                     <div class="">Classes Taught</div>
-                    <div class="classes" ng-repeat="class in classes_taught">
+                    <div class="classes" ng-repeat="class in classes_taught track by $index">
                         {{class.Title}}
                     </div>
                 </div>

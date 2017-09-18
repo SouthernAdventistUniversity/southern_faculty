@@ -1,8 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('FacultyApp', [
-    ])
+    angular.module('FacultyApp', [])
 
     .filter('rawHtml', ['$sce', function($sce) {
         return function(val) {

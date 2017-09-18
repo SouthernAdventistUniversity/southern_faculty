@@ -1,7 +1,7 @@
 <?php 
     require_once('simple_html_dom.php');
     $teacher = urlencode($_GET['teacher']);
-    $html = file_get_html("https://myaccess.southern.edu/apps/CourseSchedule/Default.aspx?Term=F17&Title=&Page=4&pSort=CourseName&dSort=Ascending&Teacher=$teacher&Departments=Any&Credits=&MeetingDays=&MeetingStart=&GeneralEd=&Writing=&ServiceLearning=&CourseSubLevel=&Location=&HideFull=&XList=false&c=1"); 
+    $html = file_get_html("https://myaccess.southern.edu/apps/CourseSchedule/Default.aspx?Term=F17&Title=&Page=4&pSort=CourseName&dSort=Ascending&Teacher=$teacher&Departments=Any&Credits=&MeetingDays=&MeetingStart=&GeneralEd=&Writing=&ServiceLearning=&CourseSubLevel=&Location=&HideFull=&XList=false&c=1");     
     //print $html;
     $table = $html->find('.dataTable', 0);
 

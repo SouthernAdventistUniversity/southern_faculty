@@ -25,7 +25,7 @@
         }
 
         $scope.showFacultyInfo = function(info) {
-            console.log(info)
+            info.Bio = decodeHtml(info.Bio);
             $scope.faculty = info;
             $http.get('php/faculty_info.php?teacher=' + info.PreferredName).then((result) => {
                 $scope.classes_taught = result.data;
@@ -37,5 +37,11 @@
             $scope.faculty = null;
             $scope.classes_taught = null;
         }
+    }
+
+    function decodeHtml(html) {
+        var txt = document.createElement("textarea");
+        txt.innerHTML = html;
+        return txt.value;
     }
 })();
